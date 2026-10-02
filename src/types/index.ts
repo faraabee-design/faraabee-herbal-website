@@ -1,0 +1,107 @@
+export interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  urduName?: string;
+  category: string;
+  price: number;
+  salePrice?: number;
+  currency: string;
+  volume?: string;
+  shortDescription: string;
+  description: string;
+  image: string;
+  secondaryImage?: string;
+  additionalImages?: string[];
+  featured: boolean;
+  inStock: boolean;
+  stockQuantity?: number;
+  sku?: string;
+  status?: 'active' | 'draft' | 'archived';
+  displayOrder?: number;
+  rating?: number;
+  reviewsCount?: number;
+  ingredients?: string[];
+  keyBotanicals?: { name: string; benefit: string }[];
+  traditionalUse?: string;
+  directions?: string;
+  precautions?: string;
+  packagingInfo?: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  displayOrder: number;
+  active: boolean;
+}
+
+export interface Promotion {
+  id: string;
+  productId?: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  discountPrice?: number;
+  badge?: string;
+  image?: string;
+  active: boolean;
+  linkText?: string;
+}
+
+export interface OrderItem {
+  productId: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image?: string;
+}
+
+export interface Order {
+  id: string;
+  customerName: string;
+  customerEmail?: string;
+  customerPhone: string;
+  shippingAddress: string;
+  city: string;
+  notes?: string;
+  items: OrderItem[];
+  total: number;
+  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'completed' | 'cancelled';
+  createdAt: string;
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  readTime: string;
+  publishedDate: string;
+  image: string;
+  author: string;
+  content: string[];
+  keyTakeaways: string[];
+}
+
+export type PageId =
+  | 'home'
+  | 'about'
+  | 'products'
+  | 'product-detail'
+  | 'journal'
+  | 'about-herbal'
+  | 'contact'
+  | 'privacy'
+  | 'terms'
+  | 'admin';

@@ -1,0 +1,6 @@
+{
+  "name": "FARABI Herbal Wellness",
+  "description": "Original herbal wellness brand rooted in traditional botanical knowledge, crafted for everyday wellness with modern care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
